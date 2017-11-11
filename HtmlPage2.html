@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <!--this is a notes page, copied from stuff you did in the browser console 
+    to practice js-->
+
+    <!--might be messy because it includes error messages, etc.-->
+    <!--error messages show your code didn't work.-->
+
+    <!--ignore all the weird letter/number combos. 
+    they are something that gets transfered from the console when you copy-->
+
+    2+2
+    4
+    console.log
+    ƒ log() { [native code] }
+    console.log("Hello there.")
+    VM384:1 Hello there.
+    undefined
+    console.log{"Hi"}
+    VM408:1 Uncaught SyntaxError: Unexpected token {
+    console.log(
+    x = 3
+    if (x = 3){console.log("correct")
+    else {console.log("incorrect"))
+    VM561:2 Uncaught SyntaxError: missing ) after argument list
+    console.log(
+    x = 3
+    if (x = 3){console.log("correct")
+    else {console.log("incorrect"))}
+    VM562:2 Uncaught SyntaxError: missing ) after argument list
+
+    x = 3
+    if (x === 3){console.log("correct")
+    else {console.log("incorrect")}
+    VM572:4 Uncaught SyntaxError: Unexpected token else
+    if (1 === 2){
+    console.log("no");}
+    else {console.log("yes");}
+    VM636:3 yes
+    undefined
+    for(var i = 0; i <10; i++){
+                          console.log(i);}
+                          VM706:2 0
+                          VM706:2 1
+                          VM706:2 2
+                          VM706:2 3
+                          VM706:2 4
+                          VM706:2 5
+                          VM706:2 6
+                          VM706:2 7
+                          VM706:2 8
+                          VM706:2 9
+                          undefined
+
+x=3
+y=4
+if (x === y){
+console.log("weird.");}
+else {console.log("not weird");}
+VM778:5 not weird
+
+    <!--some class discussion about how js is like c#. all pretty common sense stuff.-->
+
+    <!--the rest here is from jsfiddle. it works unless noted otherwise.-->
+
+    <!--a best practice: initialize when you declare a variable. you can always change it later-->
+
+                         var x = 0;
+                         var y = "0";
+                         var z = 1;
+                         x = y;
+                         alert(x);
+                         y = z;
+                         alert(y);
+                         x=z;
+                         alert(x);
+
+    <!--see how you include those alerts? 
+        it's a good way to see that each step works as expected-->
+    <!--don't forget === as the comparison syntax-->
+
+                         var a = 1;
+
+                         switch(a){
+                         case 0:
+                         alart("zero");
+                         break;
+                         case 1:
+                         alert("one");
+                         break;
+                         default:
+                         alert("default");
+                         }
+
+    <!--more:-->
+    <!--some aren't working, don't know why-->
+    <!--weird. they DO work, but need to sit for a while first.--> 
+
+                         var firstName = "Bubba";
+                         var lastName = "HoTep";
+
+                         var fullName = "Bubba HoTep";
+                         alert(fullName);
+                         var fullName1 = firstName + " " + lastName;
+                         alert(fullName1);
+
+                         fullName = fullName.replace("Bubba", "Im");
+                         alert(fullName);
+
+                         alert(firstName.indexOf("a"));
+
+                         alert(firstName.length);
+                         alert(firstName+ " " +lastname);
+
+    <!--note: a few things that are methods in C# are properties in JS, not functions
+    like, "length" is a property, not a function
+    and they don't need ()-->
+
+                         <!--var someDate = new Date();
+
+                         var myDate = someDate.getDate();
+
+                         alert(myDate);
+                         //prints today's number
+
+                         var myMonth = someDate.getMonth();
+
+                         alert(myMonth);
+                         //JS counts Jan as "0" ugh
+
+                         var myHour = someDate.getHours();
+                         alert(myHour);
+                         //prints military hour
+
+                         //look up others!!!-->
+
+    <!--you can edit HTML in basic text programs, like Notepad, Notepad++, brackets, VS Code
+    more advanced stuff like Word, Google Docs, etc won't work. They do too much to the code.-->
+
+    <!--here's some join html/js from jsfiddle. html first in <>. script below.
+    if you wrote it in a page, you'd <script> each side</script>. not needed on fiddle-->
+
+                         <input type="text" id="myInput">
+                         <button id="myButton" type="submit">
+                             Click me
+                         </button>
+                         <h1>
+                             Heading One
+                         </h1>
+                         <h1 class="muppet">
+                             Heading Two
+                         </h1>
+
+                         var yourTrigger = document.getElementById("myInput");
+                         yourTrigger.value = "Hi";
+
+                         myButton.onclick = function(){
+                         document.getElementById("myInput").value = "Button Clicked";
+                         }
+
+    <!--even better version of that last line:
+    yourTrigger.value = "Button Clicked";
+    why? cuz yourTrigger already equals document.getElementById("myInput")
+    so using the variable name is shorter, less confusing, and avoids repeat-->
+
+                         <!--//more things js will do:-->
+
+                         var myTag = document.getElementsByTagName("h1");
+                         myTag[1].innerHTML = "Yippee!";
+                         myTag[0].innerHTML = "Woozie.";
+
+                         var myTag2 = document.getElementsByClassName("muppet");
+                         myTag2[0].value = "Should print muppet";
+                         myTag2[0].innerHTML= "Should print muppet";
+
+    <!--note the class muppet overrode the tag h1.
+    when you didn't have a class, both h1 tags printed above
+    when you added the class muppet, it didn't register as part of the h1 tag-->
+
+</body>
+</html>

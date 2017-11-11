@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <!--here's stuff copied from jsfiddle. html first, script below-->
+
+    Play a game.<br />
+
+    <button id="btn">
+        Play Fizz Buzz!
+    </button>
+
+    <div id="something">
+        <!--you don't NEED to put anything in the div-->
+    </div>
+
+
+    <!--and stuff below here is the js. 
+    you DON'T have it written with script tags, so it won't run here (yet)-->
+
+    <!--//document.getElementById("something").innerHTML = "Hey baby"
+    //you typed that to test it.
+    //let's make it easier to read
+    //remember -- later actions override earlier actions-->
+    var printMe = document.getElementById("something");
+    <!--//printMe.innerHTML = "Yo!"-->
+
+    var myButton = document.getElementById("btn");
+    <!--//alert(fizzBuzz());
+    //we tried it with alert the first time
+    //it worked, so we coded out the alert
+
+    //we created the variable "results" AFTER you finished fizzBuzz
+    //it's an easy way to "hold" the product of that function
+    //so when you tinker with it later, it's easier to track/type-->
+
+    var results = fizzBuzz();
+    <!--//that line alone just makes everything from fizzBuzz into its own variable
+    //ie, the "results" of fizzBuzz
+    //alert(results); //again, that just tested it
+
+    //IMPORTANT-- this next function is the LAST thing you wrote
+    //you wrote the "big" fizzbuzz function first,
+    //then made its results a variable
+    //then made this method to send those results to the html area called "printMe"
+    //whee-->
+
+    myButton.onclick = function(){
+    printMe.innerHTML = results;
+    }
+
+    function fizzBuzz(){
+
+    var returnValue = "";
+
+    for(var i=1; i<=100; i++){
+    if (i % 15 === 0){
+    <!--//console.log("Fizz Buzz");-->
+    returnValue += "FizzBuzz";
+    }
+    else if (i % 3 ===0){
+    <!--//console.log("Fizz");-->
+    returnValue += "Fizz";
+    }
+    else if (i % 5 ===0){
+    <!--//console.log("Buzz");-->
+    returnValue += "Buzz";
+    }
+    else{
+    <!--//console.log(i)-->
+    returnValue += i;
+
+    }
+    returnValue+="<br />" //so they don't all print on same line
+
+    }
+    return returnValue;
+    }
+
+</body>
+</html>
